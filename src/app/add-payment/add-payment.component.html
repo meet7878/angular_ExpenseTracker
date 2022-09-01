@@ -1,0 +1,7 @@
+<p>Credit Card Info</p>
+
+
+CreditCardNo : <input type="text" [(ngModel)]="payment.ccNum"  class="form-control" maxlength="16" minlength="16"/> 
+ExpDate: <input type="text" [(ngModel)]="payment.expDate" class="form-control" />  
+Amount: <input type="text" [(ngModel)]="payment.amount" class="form-control"/><br>
+<button type="button" class="btn btn-success"  (click)="pay()">Pay</button>

@@ -1,0 +1,37 @@
+<!-- <p>home works!</p> -->
+<!-- {{firstName}} -->
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+        <a routerLink="/user/addrole">addrole</a>
+
+
+        <table class="table table-bordered">
+            <tr>
+                <th>RoleId</th>
+                <th>RoleName</th>
+                <th>Action</th>
+            </tr>
+
+            <tr *ngFor="let r of roles">
+                <td>{{r.roleId}}</td>
+                <td>{{r.roleName}}</td>
+                <td><span class="fakelink" (click)="deleteRole(r.roleId)">Delete</span>
+                |
+                <span class="fakelink" (click)="viewRole(r.roleId)">view</span>
+                |
+                <a routerLink="/user/viewrole/{{r.roleId}}">view2</a>
+                |
+                <a routerLink="/user/editrole/{{r.roleId}}">Edit</a>|   
+</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<p-dialog header="RoleDetail"  [transitionOptions]="'0ms'"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" [(visible)]="display">
+    {{roleName}}
+</p-dialog>

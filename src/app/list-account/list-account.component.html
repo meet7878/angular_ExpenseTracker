@@ -1,0 +1,30 @@
+<!-- 
+{{ 12345.1234 | number}} -->
+<h1>Welcome ,{{ 'male' | gender }} {{firstName | uppercase }}  </h1>
+<h4>Accounts Status as on {{todaysDate | date }}</h4>
+<!-- <h4>Accounts Status as on {{todaysDate | date:'shortTime' }}</h4>
+<h4>Accounts Status as on {{todaysDate | date:'d/M/y' }}</h4>
+<h4>Accounts Status as on {{todaysDate | date:'short' }}</h4> -->
+
+<table class="table table-bordered">
+    <tr>
+        <td>AccountName</td>
+        <td>Balance</td>
+        <td>Currency</td>
+        <td>Action</td>
+    </tr>
+
+    <tr *ngFor="let account of accounts">
+        <td>{{account.accountName}}</td>
+        <td>
+            
+            <!--{{account.balance | currency:"INR"}}
+            :: -->
+            {{account.balance | currency:account.currency}}
+
+        </td>
+        <td>{{account.currency}}</td>
+        <td><a routerLink="/user/addpayment/{{account.accountId}}">AddPayment</a></td>
+    </tr>
+
+</table>
